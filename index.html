@@ -6,75 +6,54 @@
   <title>Bellator Wear | Nr.1 Collection</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-  <style>
-    body {
-      font-family: 'Impact', 'Arial Black', sans-serif;
-      cursor: url('https://i.imgur.com/2QJqXzK.png') 16 16, auto; /* Kleines Schwert als Mauszeiger */
-    }
-    .graffiti {
-      font-family: 'Impact', 'Arial Black', sans-serif;
-      letter-spacing: -0.05em;
-      text-transform: uppercase;
-      text-shadow: 4px 4px 0 #000,
-                  -2px -2px 0 #000,
-                  2px -2px 0 #000,
-                  -2px 2px 0 #000;
-    }
-    .hero {
-      background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.9)), 
-                  url('https://images.unsplash.com/photo-1600585154340-be6161a56a9c?ixlib=rb-4.0.3&auto=format&fit=crop&q=80') center/cover fixed;
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body class="bg-black text-white overflow-x-hidden">
 
-  <section class="hero min-h-screen flex items-center justify-center relative">
+  <section class="hero min-h-screen flex items-center justify-center relative" 
+           style="background: linear-gradient(rgba(0,0,0,0.88), rgba(0,0,0,0.95)), url('https://images.unsplash.com/photo-1600585154340-be6161a56a9c?ixlib=rb-4.0.3&auto=format&fit=crop&q=80') center/cover fixed;">
+
     <div class="max-w-6xl mx-auto text-center px-6 py-20">
       
-      <!-- Kleines Logo oben Mitte -->
-      <img src="logo.png" alt="Bellator Logo" class="mx-auto mb-6 w-24 opacity-90">
+      <!-- Kleines Logo -->
+      <img src="logo.png" alt="Bellator Logo" class="mx-auto mb-8 w-28">
 
-      <!-- Haupt Titel - Graffiti Style -->
-      <h1 class="graffiti text-7xl md:text-8xl font-black tracking-[-0.07em] mb-1 text-white">
-        BELLATOR
-      </h1>
-      <p class="graffiti text-6xl md:text-7xl font-black tracking-[-0.05em] text-red-500 mb-2 drop-shadow-lg">
-        WEAR
-      </p>
+      <!-- Haupt Graffiti -->
+      <h1 class="graffiti graffiti-white text-7xl md:text-8xl drip">BELLATOR</h1>
+      <p class="graffiti graffiti-red text-6xl md:text-7xl drip">WEAR</p>
 
       <!-- Collection -->
-      <p class="graffiti text-4xl md:text-5xl text-blue-400 mb-12 tracking-widest">
-        NR.1 COLLECTION
-      </p>
+      <p class="graffiti graffiti-blue text-4xl md:text-5xl mt-6 drip">NR.1 COLLECTION</p>
 
-      <p class="text-2xl md:text-3xl max-w-xl mx-auto mb-16 text-white/90">
-        Streetwear für die Straße.<br>
-        <span class="text-red-500">Build Different. Move Silent. Leave Impact.</span>
+      <p class="text-2xl md:text-3xl max-w-xl mx-auto my-12 text-white/90">
+        Build Different.<br>
+        Move Silent.<br>
+        <span class="text-red-500">Leave Impact.</span>
       </p>
 
       <button onclick="alert('Dropping Soon 🔥 Der erste Drop kommt bald!')" 
-              class="graffiti bg-red-600 hover:bg-white hover:text-red-600 border-4 border-white text-white px-16 py-7 text-3xl tracking-widest transition-all duration-300 mb-20">
+              class="graffiti graffiti-red border-4 border-white hover:bg-white hover:text-red-600 px-16 py-7 text-3xl tracking-widest transition-all">
         DROPPING SOON
       </button>
 
       <!-- Mockups -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-        <div class="group">
-          <img src="back.png" alt="Back Print" class="rounded-3xl shadow-2xl border-4 border-red-500 w-full transition-transform group-hover:scale-105">
-          <p class="graffiti text-red-400 mt-4 text-xl">BACK PRINT</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-5xl mx-auto mt-20">
+        <div>
+          <img src="back.png" alt="Back Print" class="rounded-3xl shadow-2xl border-4 border-red-500 w-full">
+          <p class="graffiti graffiti-red mt-4 text-2xl">BACK PRINT</p>
         </div>
-        <div class="group">
-          <img src="front.png" alt="Front Print" class="rounded-3xl shadow-2xl border-4 border-blue-500 w-full transition-transform group-hover:scale-105">
-          <p class="graffiti text-blue-400 mt-4 text-xl">CHEST PRINT</p>
+        <div>
+          <img src="front.png" alt="Front Print" class="rounded-3xl shadow-2xl border-4 border-blue-500 w-full">
+          <p class="graffiti graffiti-blue mt-4 text-2xl">CHEST PRINT</p>
         </div>
       </div>
 
       <div class="mt-20 flex justify-center gap-12 text-5xl">
-        <a href="https://instagram.com/bellatorwear" target="_blank" class="hover:text-red-500 transition"><i class="fab fa-instagram"></i></a>
-        <a href="https://tiktok.com/@bellatorwear" target="_blank" class="hover:text-blue-400 transition"><i class="fab fa-tiktok"></i></a>
+        <a href="#" class="hover:text-red-500 transition"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="hover:text-blue-400 transition"><i class="fab fa-tiktok"></i></a>
       </div>
 
-      <p class="mt-16 text-xs text-gray-500">EST. 2026 • UNCONQUERED STREETWEAR</p>
+      <p class="mt-16 text-xs text-gray-500">EST. 2026 • UNCONQUERED</p>
     </div>
   </section>
 
