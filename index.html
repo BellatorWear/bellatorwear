@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bellator Wear | Unconquered Streetwear</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <style>
+    body { font-family: 'Inter', system-ui, sans-serif; }
+    .hero { 
+      background: linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0.95)), 
+                  url('https://images.unsplash.com/photo-1600585154340-be6161a56a9c?ixlib=rb-4.0.3&auto=format&fit=crop&q=80') center/cover no-repeat fixed;
+    }
+    .glow { text-shadow: 0 0 40px rgba(234, 179, 8, 0.7); }
+  </style>
+</head>
+<body class="bg-black text-white overflow-x-hidden">
+
+  <!-- Hero -->
+  <section class="hero min-h-screen flex items-center justify-center relative">
+    <div class="max-w-5xl mx-auto text-center px-6 py-20">
+      
+      <!-- Logo -->
+      <img src="logo.png" 
+           alt="Bellator Wear" 
+           class="mx-auto mb-10 w-80 md:w-[420px] drop-shadow-2xl">
+
+      <h1 class="text-7xl md:text-8xl font-black tracking-tighter mb-2 glow">BELLATOR</h1>
+      <p class="text-4xl md:text-5xl text-yellow-400 font-light tracking-widest mb-12">WEAR</p>
+
+      <p class="text-2xl md:text-3xl max-w-2xl mx-auto mb-12 text-gray-200">
+        Streetwear für Krieger.<br>
+        <span class="text-yellow-400">Baggy. Elevated. Unbesiegt.</span>
+      </p>
+
+      <button onclick="alert('Dropping Soon 🔥 Bleib dran!')" 
+              class="bg-white hover:bg-yellow-400 text-black px-14 py-6 rounded-full text-2xl font-bold transition-all duration-300 mb-16">
+        DROPPING SOON
+      </button>
+
+      <!-- Mockups -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto px-4">
+        <div>
+          <img src="back.png" alt="Back Print" class="rounded-3xl shadow-2xl border border-gray-800 w-full">
+          <p class="text-gray-400 mt-3 text-sm">BACK PRINT</p>
+        </div>
+        <div>
+          <img src="front.png" alt="Front Print" class="rounded-3xl shadow-2xl border border-gray-800 w-full">
+          <p class="text-gray-400 mt-3 text-sm">CHEST PRINT</p>
+        </div>
+      </div>
+
+      <div class="mt-20">
+        <p class="text-gray-400 mb-6">Folge für den ersten Drop</p>
+        <div class="flex justify-center gap-10 text-5xl">
+          <a href="https://instagram.com/" target="_blank" class="hover:text-yellow-400 transition"><i class="fab fa-instagram"></i></a>
+          <a href="https://tiktok.com/" target="_blank" class="hover:text-yellow-400 transition"><i class="fab fa-tiktok"></i></a>
+        </div>
+      </div>
+
+      <p class="mt-24 text-xs text-gray-600">EST. 2026 • UNCONQUERED</p>
+    </div>
+  </section>
+
+</body>
+</html>
