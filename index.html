@@ -5,90 +5,92 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bellator Wear | Nr.1 Collection</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      cursor: url('https://i.ibb.co.com/0jKzL8P/spray-can-cursor.png') 16 30, auto;
+    }
+    .hero {
+      position: relative;
+      min-height: 100vh;
+    }
+    #background {
+      position: fixed;
+      top: -10%;
+      left: -10%;
+      width: 120%;
+      height: 120%;
+      background-image: url('backround_web.jpg');
+      background-size: cover;
+      background-position: center;
+      z-index: -1;
+      transition: transform 0.15s ease-out;
+    }
+  </style>
 </head>
 <body class="bg-black text-white">
 
   <section class="hero flex items-center justify-center relative">
-    <!-- Dein Graffiti-Bild mit Parallax -->
     <div id="background"></div>
 
     <div class="max-w-5xl mx-auto text-center px-6 py-20 relative z-10">
-      
-      <img src="logo.png" alt="Bellator Wear" class="mx-auto mb-8 w-36 drop-shadow-2xl">
+      <img src="logo.png" alt="Bellator Wear" class="mx-auto mb-8 w-40">
 
-      <h1 class="title-font text-7xl md:text-8xl tracking-tighter text-white mb-2">BELLATOR</h1>
-      <p class="title-font text-6xl md:text-7xl text-red-500 -mt-4 mb-8">WEAR</p>
+      <h1 class="text-7xl md:text-8xl font-black tracking-tighter text-white mb-1">BELLATOR</h1>
+      <p class="text-6xl md:text-7xl font-black text-red-500 -mt-4 mb-10">WEAR</p>
 
-      <p class="text-4xl md:text-5xl font-medium text-blue-400 mb-12">NR.1 COLLECTION</p>
+      <p class="text-4xl md:text-5xl text-blue-400 mb-12">NR.1 COLLECTION</p>
 
-      <!-- Haupt Shirt -->
       <div class="max-w-md mx-auto mb-12">
-        <img src="back.png" alt="Bellator Backprint" class="rounded-3xl shadow-2xl border-4 border-red-500">
+        <img src="back.png" class="rounded-3xl shadow-2xl border-4 border-red-500">
       </div>
 
-      <p class="text-2xl max-w-lg mx-auto mb-10 text-gray-100">
-        Streetwear mit Attitude.<br>
-        <span class="text-white">Build Different. Leave Impact.</span>
-      </p>
+      <p class="text-2xl mb-12">Build Different. Move Silent. Leave Impact.</p>
 
-      <!-- Countdown -->
       <div class="mb-12">
-        <p class="uppercase tracking-widest text-red-400 text-sm mb-3">DROP STARTET AM 1. JULI 2026</p>
-        <div id="countdown" class="text-5xl md:text-6xl flex justify-center gap-8 font-bold"></div>
+        <p class="text-red-400 text-sm mb-2">DROP AM 1. JULI 2026</p>
+        <div id="countdown" class="text-5xl font-bold flex justify-center gap-8"></div>
       </div>
 
-      <!-- Vorbestell Button -->
-      <div class="inline-block mb-16">
-        <button onclick="alert('Vorbestellung startet am 1. Juli 2026 🔥 Du wirst benachrichtigt!')" 
-                class="bg-red-600 hover:bg-white hover:text-red-600 text-white font-bold px-20 py-8 text-3xl rounded-2xl border-4 border-white transition-all duration-300">
-          JETZT VORBESTELLEN
-        </button>
-      </div>
-
-      <div class="grid grid-cols-2 gap-6 max-w-lg mx-auto">
-        <img src="front.png" class="rounded-2xl border border-gray-700">
-        <img src="back.png" class="rounded-2xl border border-gray-700">
-      </div>
-
-      <div class="mt-20 text-gray-400 text-sm">
-        EST. 2026 • UNCONQUERED STREETWEAR
-      </div>
+      <button onclick="alert('Vorbestellung startet am 1. Juli!')" 
+              class="bg-red-600 hover:bg-white hover:text-red-600 px-16 py-8 text-3xl font-bold rounded-2xl border-4 border-white">
+        JETZT VORBESTELLEN
+      </button>
     </div>
   </section>
 
   <script>
-    // Parallax Effekt
+    // Parallax
     document.addEventListener('mousemove', (e) => {
       const bg = document.getElementById('background');
-      const x = (e.clientX / window.innerWidth) * 30 - 15;
-      const y = (e.clientY / window.innerHeight) * 30 - 15;
+      const x = (e.clientX / window.innerWidth) * 40 - 20;
+      const y = (e.clientY / window.innerHeight) * 40 - 20;
       bg.style.transform = `translate(${x}px, ${y}px)`;
     });
 
     // Countdown
-    function startCountdown() {
-      const dropDate = new Date("2026-07-01T00:00:00").getTime();
-      function update() {
-        const distance = dropDate - new Date().getTime();
-        if (distance < 0) {
-          document.getElementById("countdown").innerHTML = `<span class="text-green-400">DROP IST DA!</span>`;
-          return;
-        }
-        const days = Math.floor(distance / (1000*60*60*24));
-        const hours = Math.floor((distance % (1000*60*60*24)) / (1000*60*60));
-        const minutes = Math.floor((distance % (1000*60*60)) / (1000*60));
+    function countdown() {
+      const drop = new Date("2026-07-01T00:00:00").getTime();
+      const now = new Date().getTime();
+      const diff = drop - now;
 
-        document.getElementById("countdown").innerHTML = `
-          <div><span class="text-6xl">${days}</span><br><span class="text-xs">TAGE</span></div>
-          <div><span class="text-6xl">${hours}</span><br><span class="text-xs">STD</span></div>
-          <div><span class="text-6xl">${minutes}</span><br><span class="text-xs">MIN</span></div>
-        `;
+      if (diff < 0) {
+        document.getElementById("countdown").innerHTML = "DROP IST DA!";
+        return;
       }
-      update();
-      setInterval(update, 60000);
+
+      const days = Math.floor(diff / (1000*60*60*24));
+      const hours = Math.floor((diff % (1000*60*60*24)) / (1000*60*60));
+      const minutes = Math.floor((diff % (1000*60*60)) / (1000*60));
+
+      document.getElementById("countdown").innerHTML = `
+        <div>${days}<span class="text-sm block">TAGE</span></div>
+        <div>${hours}<span class="text-sm block">STD</span></div>
+        <div>${minutes}<span class="text-sm block">MIN</span></div>
+      `;
     }
-    startCountdown();
+    setInterval(countdown, 60000);
+    countdown();
   </script>
 </body>
 </html>
