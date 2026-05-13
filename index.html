@@ -5,299 +5,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bellator Wear | Vintage & Oversized Streetwear</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
-    <style>
-        /* CSS Reset & Basics */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Montserrat', sans-serif;
-        }
-
-        body {
-            background-color: #0a0a0a;
-            color: #ffffff;
-            line-height: 1.6;
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        /* Navbar */
-        header {
-            position: absolute;
-            top: 0;
-            width: 100%;
-            padding: 20px 50px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 100;
-            background: linear-gradient(to bottom, rgba(0,0,0,0.8), transparent);
-        }
-
-        .logo-container img {
-            height: 40px; /* Passe die Größe deines Logos hier an */
-            object-fit: contain;
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 30px;
-        }
-
-        nav ul li a {
-            font-size: 14px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: color 0.3s ease;
-        }
-
-        nav ul li a:hover {
-            color: #a0a0a0;
-        }
-
-        .nav-icons {
-            display: flex;
-            gap: 20px;
-            font-size: 14px;
-            font-weight: 700;
-        }
-
-        /* Hero Section */
-        .hero {
-            height: 100vh;
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url('backround_web.jpg') no-repeat center center/cover;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 0 20px;
-        }
-
-        .hero h1 {
-            font-size: 5rem;
-            font-weight: 900;
-            text-transform: uppercase;
-            letter-spacing: 5px;
-            margin-bottom: 20px;
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            max-width: 600px;
-            margin-bottom: 40px;
-            font-weight: 400;
-        }
-
-        .btn {
-            display: inline-block;
-            background-color: #fff;
-            color: #000;
-            padding: 15px 40px;
-            font-size: 1rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            border-radius: 30px;
-            transition: all 0.3s ease;
-        }
-
-        .btn:hover {
-            background-color: #ccc;
-            transform: translateY(-2px);
-        }
-
-        /* Feature / Prints Section */
-        .designs {
-            padding: 80px 50px;
-            text-align: center;
-        }
-
-        .designs h2 {
-            font-size: 2.5rem;
-            margin-bottom: 50px;
-            text-transform: uppercase;
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .card {
-            background-color: #111;
-            padding: 40px 20px;
-            border-radius: 10px;
-            transition: transform 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .card:hover {
-            transform: translateY(-10px);
-        }
-
-        .card img {
-            width: 100%;
-            max-height: 400px;
-            object-fit: contain;
-            margin-bottom: 20px;
-        }
-
-        .card h3 {
-            font-size: 1.5rem;
-            text-transform: uppercase;
-            margin-bottom: 10px;
-        }
-
-        .card p {
-            color: #888;
-            font-size: 0.9rem;
-        }
-
-        /* Footer */
-        footer {
-            background-color: #050505;
-            padding: 60px 50px 20px;
-            border-top: 1px solid #222;
-        }
-
-        .footer-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr 2fr;
-            gap: 40px;
-            max-width: 1200px;
-            margin: 0 auto 40px;
-        }
-
-        .footer-col h4 {
-            font-size: 1.2rem;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-        }
-
-        .footer-col ul {
-            list-style: none;
-        }
-
-        .footer-col ul li {
-            margin-bottom: 10px;
-        }
-
-        .footer-col ul li a {
-            color: #888;
-            font-size: 0.9rem;
-            transition: color 0.3s ease;
-        }
-
-        .footer-col ul li a:hover {
-            color: #fff;
-        }
-
-        .newsletter input {
-            background: #111;
-            border: 1px solid #333;
-            color: #fff;
-            padding: 12px 20px;
-            width: 70%;
-            border-radius: 5px;
-            margin-right: 10px;
-            font-family: 'Montserrat', sans-serif;
-        }
-
-        .newsletter button {
-            background: #fff;
-            color: #000;
-            border: none;
-            padding: 12px 20px;
-            border-radius: 5px;
-            font-weight: 700;
-            cursor: pointer;
-            transition: background 0.3s ease;
-        }
-
-        .newsletter button:hover {
-            background: #ccc;
-        }
-
-        .copyright {
-            text-align: center;
-            color: #555;
-            font-size: 0.8rem;
-            border-top: 1px solid #222;
-            padding-top: 20px;
-            margin-top: 20px;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            header {
-                flex-direction: column;
-                gap: 15px;
-                padding: 20px;
-            }
-            .hero h1 {
-                font-size: 3rem;
-            }
-            .footer-content {
-                grid-template-columns: 1fr;
-            }
-            .newsletter input {
-                width: 100%;
-                margin-bottom: 10px;
-            }
-            .newsletter button {
-                width: 100%;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <header>
         <div class="logo-container">
-            <a href="#"><img src="logo.png" alt="Bellator Logo"></a>
+            <a href="index.html"><img src="logo.png" alt="Bellator Logo"></a>
         </div>
         <nav>
             <ul>
-                <li><a href="#">Shop</a></li>
-                <li><a href="#">Kollektion</a></li>
-                <li><a href="#">About Us</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="kollektion.html">Kollektion</a></li>
+                <li><a href="about.html">About Us</a></li>
             </ul>
         </nav>
         <div class="nav-icons">
-            <a href="#">Suche</a>
-            <a href="#">Cart (0)</a>
+            <a href="suche.html">Suche</a>
+            <a href="cart.html">Cart (0)</a>
         </div>
     </header>
 
     <section class="hero">
-        <h1>Bellator Wear</h1>
-        <p>Geile Vintage Klamotten. Oversized geschnitten für Skater und alle, die zeigen wollen, was sie tragen.</p>
-        <a href="#shop" class="btn">Kollektion ansehen</a>
+        <div class="hero-bg" id="bg-image"></div>
+        <div class="hero-content">
+            <h1>Bellator Wear</h1>
+            <p>Vintage Styles. Oversized Fits. Pure Streetwear.</p>
+            <a href="kollektion.html" class="btn">Kollektion ansehen</a>
+        </div>
     </section>
 
     <section id="shop" class="designs">
-        <h2>Unsere Signature Pieces</h2>
+        <h2>Our Pieces</h2>
         <div class="grid">
             <div class="card">
                 <img src="front.png" alt="Bellator Chest Print">
                 <h3>The Front</h3>
-                <p>Dezentes Chest Print Logo. Clean und aussagekräftig.</p>
+                <p>Oversized Tee with Chest Print</p>
             </div>
-            
             <div class="card">
                 <img src="back.png" alt="Bellator Schwert Backprint">
                 <h3>The Back</h3>
-                <p>Das ikonische Schwert-Design. Fetter Backprint, der auffällt.</p>
+                <p>Heavy Cotton Hoodie with Sword Backprint</p>
             </div>
         </div>
     </section>
@@ -309,35 +58,48 @@
                 <p style="color: #888; font-size: 0.9rem; margin-bottom: 10px;">
                     Wear it proud. Vintage & Oversized Streetwear for the bold.
                 </p>
-                <p style="color: #888; font-size: 0.9rem;">E-Mail: support@bellator-wear.com</p>
+                <p style="color: #888; font-size: 0.9rem;">E-Mail: <a href="mailto:support@bellator-wear.com">support@bellator-wear.com</a></p>
             </div>
             
             <div class="footer-col">
                 <h4>Hilfe & Support</h4>
                 <ul>
-                    <li><a href="#">FAQ</a></li>
-                    <li><a href="#">AGB</a></li>
-                    <li><a href="#">Widerrufsrecht</a></li>
-                    <li><a href="#">Datenschutzerklärung</a></li>
-                    <li><a href="#">Impressum</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="agb.html">AGB</a></li>
+                    <li><a href="widerruf.html">Widerrufsrecht</a></li>
+                    <li><a href="datenschutz.html">Datenschutzerklärung</a></li>
+                    <li><a href="impressum.html">Impressum</a></li>
                 </ul>
             </div>
 
             <div class="footer-col">
-                <h4>Werde Teil der Community</h4>
-                <p style="color: #888; font-size: 0.9rem; margin-bottom: 15px;">
-                    Melde dich kostenlos an und bekomme Early Access für künftige Drops und krasse Vintage Pieces!
-                </p>
+                <h4>Newsletter</h4>
+                <p style="color: #888; font-size: 0.9rem; margin-bottom: 15px;">Early Access für künftige Drops sichern.</p>
                 <div class="newsletter">
-                    <input type="email" placeholder="Deine E-Mail Adresse">
-                    <button>Anmelden</button>
+                    <input type="email" placeholder="E-Mail">
+                    <button>Go</button>
                 </div>
             </div>
         </div>
         <div class="copyright">
-            &copy; 2026 Bellator Wear. All rights reserved.
+            &copy; 2026 Bellator Wear.
         </div>
     </footer>
+
+    <script>
+        window.addEventListener('scroll', function() {
+            const bg = document.getElementById('bg-image');
+            let scrollPos = window.scrollY;
+            
+            // Berechnet den Blur-Wert basierend auf dem Scroll (max 10px Blur)
+            let blurValue = Math.min(scrollPos / 50, 10); 
+            bg.style.filter = `blur(${blurValue}px)`;
+            
+            // Optional: Macht das Bild beim Scrollen auch etwas dunkler
+            let brightnessValue = Math.max(1 - (scrollPos / 1000), 0.5);
+            bg.style.opacity = brightnessValue;
+        });
+    </script>
 
 </body>
 </html>
