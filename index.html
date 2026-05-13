@@ -5,99 +5,88 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bellator Wear | Nr.1 Collection</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-  <style>
-    body {
-      font-family: 'Impact', 'Arial Black', sans-serif;
-      cursor: url('https://i.ibb.co.com/5YkZ3vK/sword-cursor.png') 20 20, auto; /* Comic Schwert Mauszeiger */
-    }
-    .comic {
-      font-family: 'Impact', 'Arial Black', sans-serif;
-      text-transform: uppercase;
-      font-weight: 900;
-      letter-spacing: -0.05em;
-      -webkit-text-stroke: 3px #000;
-      text-shadow: 5px 5px 0 #000,
-                  -3px -3px 0 #000;
-    }
-    .hero {
-      background: linear-gradient(rgba(0,0,0,0.85), rgba(20,0,0,0.9)), 
-                  url('https://images.unsplash.com/photo-1600585154340-be6161a56a9c?ixlib=rb-4.0.3&auto=format&fit=crop&q=80') center/cover fixed;
-    }
-    .countdown {
-      font-family: 'Impact', sans-serif;
-      letter-spacing: 0.15em;
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css">
 </head>
-<body class="bg-black text-white overflow-x-hidden">
+<body class="bg-black text-white">
 
   <section class="hero min-h-screen flex items-center justify-center relative">
-    <div class="max-w-5xl mx-auto text-center px-6 py-16">
+    <div class="max-w-5xl mx-auto text-center px-6 py-20">
       
-      <!-- Kleines Logo -->
-      <img src="logo.png" alt="Bellator Wear" class="mx-auto mb-6 w-32 opacity-95">
+      <!-- Logo -->
+      <img src="logo.png" alt="Bellator Wear" class="mx-auto mb-8 w-36">
 
       <!-- Haupt Titel -->
-      <h1 class="comic text-7xl md:text-[5.5rem] leading-none text-white">BELLATOR</h1>
-      <p class="comic text-6xl md:text-7xl text-red-500 -mt-3">WEAR</p>
+      <h1 class="title-font text-7xl md:text-8xl tracking-tighter mb-2">BELLATOR</h1>
+      <p class="title-font text-6xl md:text-7xl text-red-500 -mt-4 mb-8">WEAR</p>
 
-      <!-- Collection -->
-      <p class="comic text-4xl md:text-5xl text-blue-400 mt-6 tracking-widest">NR.1 COLLECTION</p>
+      <p class="text-4xl md:text-5xl font-medium text-blue-400 mb-12">NR.1 COLLECTION</p>
 
-      <!-- Slogan kurz & stark -->
-      <p class="text-xl md:text-2xl mt-10 mb-12 text-white/90 max-w-md mx-auto">
-        BUILD DIFFERENT.<br>
-        MOVE SILENT.<br>
-        LEAVE IMPACT.
+      <!-- Hero Shirt -->
+      <div class="max-w-md mx-auto mb-12">
+        <img src="back.png" alt="Bellator Backprint" class="rounded-3xl shadow-2xl border border-gray-800">
+      </div>
+
+      <p class="text-2xl max-w-lg mx-auto mb-10 text-gray-200">
+        Streetwear für Krieger.<br>
+        <span class="text-white">Qualität. Attitude. Unbesiegt.</span>
       </p>
 
       <!-- Countdown -->
       <div class="mb-12">
-        <p class="text-red-400 text-sm tracking-widest mb-3">DROP IN</p>
-        <div id="countdown" class="countdown text-5xl md:text-6xl font-bold text-white flex justify-center gap-6 md:gap-10"></div>
+        <p class="uppercase tracking-widest text-red-400 text-sm mb-3">Der Drop startet am</p>
+        <div id="countdown" class="countdown text-5xl md:text-6xl flex justify-center gap-8 text-white"></div>
       </div>
 
-      <!-- Pre-Order Button -->
-      <button onclick="alert('Vorbestellung wird bald freigeschaltet 🔥 Bleib dran!')" 
-              class="comic border-4 border-red-500 bg-red-600 hover:bg-white hover:text-red-600 text-white px-20 py-8 text-3xl tracking-widest transition-all duration-300 shadow-2xl">
-        JETZT VORBESTELLEN
-      </button>
-
-      <!-- Mockups -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-20 max-w-4xl mx-auto">
-        <img src="back.png" alt="Back Print" class="rounded-3xl shadow-2xl border-4 border-red-500">
-        <img src="front.png" alt="Front Print" class="rounded-3xl shadow-2xl border-4 border-blue-500">
+      <!-- Locked Button -->
+      <div class="locked inline-block mb-16">
+        <button onclick="alert('Vorbestellung startet am 1. Juli 2026 🔥 Du wirst benachrichtigt!')" 
+                class="bg-white text-black font-bold px-16 py-8 text-2xl rounded-2xl border-4 border-red-600 hover:scale-105 transition-all duration-300">
+          JETZT VORBESTELLEN
+        </button>
       </div>
 
-      <div class="mt-16 flex justify-center gap-10 text-4xl">
-        <a href="#" class="hover:text-red-500 transition"><i class="fab fa-instagram"></i></a>
-        <a href="#" class="hover:text-blue-400 transition"><i class="fab fa-tiktok"></i></a>
+      <!-- Mockups klein darunter -->
+      <div class="grid grid-cols-2 gap-6 max-w-lg mx-auto">
+        <img src="front.png" alt="Front" class="rounded-2xl border border-gray-700">
+        <img src="back.png" alt="Back" class="rounded-2xl border border-gray-700">
       </div>
 
-      <p class="mt-12 text-xs text-gray-500">EST. 2026 • UNCONQUERED</p>
+      <div class="mt-20 text-gray-500 text-sm">
+        EST. 2026 • UNCONQUERED STREETWEAR
+      </div>
     </div>
   </section>
 
   <script>
-    // Countdown bis 1. Juni 2026
-    function countdown() {
-      const dropDate = new Date("2026-06-01T00:00:00").getTime();
-      const now = new Date().getTime();
-      const distance = dropDate - now;
+    // Countdown bis 1. Juli 2026
+    function startCountdown() {
+      const dropDate = new Date("2026-07-01T00:00:00").getTime();
 
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      function update() {
+        const now = new Date().getTime();
+        const distance = dropDate - now;
 
-      document.getElementById("countdown").innerHTML = `
-        <div><span class="text-6xl">${days}</span><br><span class="text-sm">DAYS</span></div>
-        <div><span class="text-6xl">${hours}</span><br><span class="text-sm">HOURS</span></div>
-        <div><span class="text-6xl">${minutes}</span><br><span class="text-sm">MIN</span></div>
-      `;
+        if (distance < 0) {
+          document.getElementById("countdown").innerHTML = `<span class="text-green-400">DER DROP IST DA!</span>`;
+          return;
+        }
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+        document.getElementById("countdown").innerHTML = `
+          <div class="text-center"><span class="text-6xl">${days}</span><br><span class="text-xs tracking-widest">TAGE</span></div>
+          <div class="text-center"><span class="text-6xl">${hours}</span><br><span class="text-xs tracking-widest">STD</span></div>
+          <div class="text-center"><span class="text-6xl">${minutes}</span><br><span class="text-xs tracking-widest">MIN</span></div>
+        `;
+      }
+
+      update();
+      setInterval(update, 60000);
     }
-    setInterval(countdown, 60000);
-    countdown();
+
+    startCountdown();
   </script>
 
 </body>
