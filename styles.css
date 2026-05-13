@@ -1,67 +1,39 @@
-/* styles.css - Bellator Wear Graffiti Style */
+/* styles.css - Clean Premium Streetwear */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&family=Space+Grotesk:wght@500;600;700&display=swap');
 
 body {
-  font-family: 'Impact', 'Arial Black', sans-serif;
-  cursor: url('https://i.imgur.com/2QJqXzK.png') 16 16, auto; /* kleines Schwert */
+  font-family: 'Inter', system-ui, sans-serif;
+  cursor: url('https://i.ibb.co.com/5YkZ3vK/sword-cursor.png') 20 20, auto;
 }
 
-.graffiti {
-  font-family: 'Impact', 'Arial Black', sans-serif;
-  text-transform: uppercase;
-  letter-spacing: -0.06em;
-  font-weight: 900;
-  text-shadow: 
-    6px 6px 0 #000,
-    -3px -3px 0 #000,
-    3px -3px 0 #000,
-    -3px 3px 0 #000;
+.title-font {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+}
+
+.hero {
+  background: linear-gradient(rgba(0,0,0,0.88), rgba(0,0,0,0.92)), 
+              url('https://images.unsplash.com/photo-1600585154340-be6161a56a9c?ixlib=rb-4.0.3&auto=format&fit=crop&q=80') center/cover fixed;
+}
+
+.locked {
   position: relative;
+  overflow: hidden;
 }
 
-/* Dripping / Zerlaufender Effekt */
-.graffiti.drip::after {
-  content: '';
+.locked::after {
+  content: '🔒';
   position: absolute;
-  bottom: -8px;
-  left: 0;
-  width: 100%;
-  height: 25px;
-  background: linear-gradient(transparent, #000);
-  filter: blur(4px);
-  opacity: 0.7;
-  z-index: -1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 4rem;
+  opacity: 0.25;
+  z-index: 10;
 }
 
-/* Farb-Varianten */
-.graffiti-red {
-  color: #ef4444;
-  text-shadow: 
-    6px 6px 0 #000,
-    -3px -3px 0 #000,
-    3px -3px 0 #000,
-    -3px 3px 0 #000;
-}
-
-.graffiti-blue {
-  color: #3b82f6;
-  text-shadow: 
-    6px 6px 0 #000,
-    -3px -3px 0 #000,
-    3px -3px 0 #000,
-    -3px 3px 0 #000;
-}
-
-.graffiti-white {
-  color: #fff;
-  text-shadow: 
-    6px 6px 0 #000,
-    -3px -3px 0 #000,
-    3px -3px 0 #000,
-    -3px 3px 0 #000;
-}
-
-/* Hover Effekt */
-.graffiti:hover {
-  transform: scale(1.03);
-  transition: all 0.3s ease;
+.countdown {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
 }
