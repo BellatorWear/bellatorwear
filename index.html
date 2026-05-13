@@ -1,39 +1,96 @@
-/* styles.css - Clean Premium Streetwear */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&family=Space+Grotesk:wght@500;600;700&display=swap');
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bellator Wear | Nr.1 Collection</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-black text-white">
 
-body {
-  font-family: 'Inter', system-ui, sans-serif;
-  cursor: url('https://i.ibb.co.com/5YkZ3vK/sword-cursor.png') 20 20, auto;
-}
+  <section class="hero min-h-screen flex items-center justify-center relative">
+    <!-- Neuer Graffiti Zug Hintergrund -->
+    <div class="absolute inset-0 bg-cover bg-center bg-no-repeat" 
+         style="background-image: url('https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&auto=format&fit=crop&q=80'); 
+                filter: brightness(0.65) contrast(1.1);">
+    </div>
 
-.title-font {
-  font-family: 'Space Grotesk', sans-serif;
-  font-weight: 700;
-  letter-spacing: -0.04em;
-}
+    <div class="max-w-5xl mx-auto text-center px-6 py-20 relative z-10">
+      
+      <!-- Logo -->
+      <img src="logo.png" alt="Bellator Wear" class="mx-auto mb-8 w-36 drop-shadow-2xl">
 
-.hero {
-  background: linear-gradient(rgba(0,0,0,0.88), rgba(0,0,0,0.92)), 
-              url('https://images.unsplash.com/photo-1600585154340-be6161a56a9c?ixlib=rb-4.0.3&auto=format&fit=crop&q=80') center/cover fixed;
-}
+      <!-- Titel -->
+      <h1 class="title-font text-7xl md:text-8xl tracking-tighter text-white mb-2">BELLATOR</h1>
+      <p class="title-font text-6xl md:text-7xl text-red-500 -mt-4 mb-8">WEAR</p>
 
-.locked {
-  position: relative;
-  overflow: hidden;
-}
+      <p class="text-4xl md:text-5xl font-medium text-blue-400 mb-12">NR.1 COLLECTION</p>
 
-.locked::after {
-  content: '🔒';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 4rem;
-  opacity: 0.25;
-  z-index: 10;
-}
+      <!-- Haupt Shirt groß -->
+      <div class="max-w-md mx-auto mb-12">
+        <img src="back.png" alt="Bellator Backprint" 
+             class="rounded-3xl shadow-2xl border-4 border-red-500">
+      </div>
 
-.countdown {
-  font-family: 'Space Grotesk', sans-serif;
-  font-weight: 700;
-}
+      <p class="text-2xl max-w-lg mx-auto mb-10 text-gray-100">
+        Streetwear mit Attitude.<br>
+        <span class="text-white">Build Different. Leave Impact.</span>
+      </p>
+
+      <!-- Countdown -->
+      <div class="mb-12">
+        <p class="uppercase tracking-widest text-red-400 text-sm mb-3">DROP STARTET AM 1. JULI 2026</p>
+        <div id="countdown" class="countdown text-5xl md:text-6xl flex justify-center gap-8 text-white"></div>
+      </div>
+
+      <!-- Locked Pre-Order Button -->
+      <div class="locked inline-block mb-16">
+        <button onclick="alert('Vorbestellung startet am 1. Juli 2026 🔥 Du wirst benachrichtigt!')" 
+                class="bg-red-600 hover:bg-white hover:text-red-600 text-white font-bold px-20 py-8 text-3xl rounded-2xl border-4 border-white transition-all duration-300 shadow-xl">
+          JETZT VORBESTELLEN
+        </button>
+      </div>
+
+      <div class="grid grid-cols-2 gap-6 max-w-lg mx-auto">
+        <img src="front.png" alt="Front" class="rounded-2xl border border-gray-700 shadow-xl">
+        <img src="back.png" alt="Back" class="rounded-2xl border border-gray-700 shadow-xl">
+      </div>
+
+      <div class="mt-20 text-gray-400 text-sm">
+        EST. 2026 • UNCONQUERED STREETWEAR
+      </div>
+    </div>
+  </section>
+
+  <script>
+    function startCountdown() {
+      const dropDate = new Date("2026-07-01T00:00:00").getTime();
+
+      function update() {
+        const now = new Date().getTime();
+        const distance = dropDate - now;
+
+        if (distance < 0) {
+          document.getElementById("countdown").innerHTML = `<span class="text-green-400 text-5xl">DER DROP IST DA!</span>`;
+          return;
+        }
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+        document.getElementById("countdown").innerHTML = `
+          <div><span class="text-6xl">${days}</span><br><span class="text-xs">TAGE</span></div>
+          <div><span class="text-6xl">${hours}</span><br><span class="text-xs">STD</span></div>
+          <div><span class="text-6xl">${minutes}</span><br><span class="text-xs">MIN</span></div>
+        `;
+      }
+      update();
+      setInterval(update, 60000);
+    }
+    startCountdown();
+  </script>
+
+</body>
+</html>
