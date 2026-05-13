@@ -5,92 +5,87 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bellator Wear | Nr.1 Collection</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    body {
-      font-family: 'Inter', system-ui, sans-serif;
-      cursor: url('https://i.ibb.co.com/0jKzL8P/spray-can-cursor.png') 16 30, auto;
-    }
-    .hero {
-      position: relative;
-      min-height: 100vh;
-    }
-    #background {
-      position: fixed;
-      top: -10%;
-      left: -10%;
-      width: 120%;
-      height: 120%;
-      background-image: url('backround_web.jpg');
-      background-size: cover;
-      background-position: center;
-      z-index: -1;
-      transition: transform 0.15s ease-out;
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body class="bg-black text-white">
 
-  <section class="hero flex items-center justify-center relative">
-    <div id="background"></div>
+  <!-- HERO -->
+  <section class="hero relative">
+    <div class="max-w-6xl mx-auto px-6 py-20 text-center">
+      <img src="logo.png" alt="Bellator Wear" class="mx-auto mb-10 w-40">
+      
+      <h1 class="title text-7xl md:text-8xl tracking-tighter">BELLATOR</h1>
+      <p class="title text-6xl md:text-7xl text-red-500 -mt-4">WEAR</p>
+      <p class="text-4xl md:text-5xl text-blue-400 mt-6">NR.1 COLLECTION</p>
 
-    <div class="max-w-5xl mx-auto text-center px-6 py-20 relative z-10">
-      <img src="logo.png" alt="Bellator Wear" class="mx-auto mb-8 w-40">
-
-      <h1 class="text-7xl md:text-8xl font-black tracking-tighter text-white mb-1">BELLATOR</h1>
-      <p class="text-6xl md:text-7xl font-black text-red-500 -mt-4 mb-10">WEAR</p>
-
-      <p class="text-4xl md:text-5xl text-blue-400 mb-12">NR.1 COLLECTION</p>
-
-      <div class="max-w-md mx-auto mb-12">
-        <img src="back.png" class="rounded-3xl shadow-2xl border-4 border-red-500">
+      <div class="mt-16 max-w-2xl mx-auto">
+        <img src="back.png" alt="Bellator Backprint" class="rounded-3xl shadow-2xl mx-auto">
       </div>
 
-      <p class="text-2xl mb-12">Build Different. Move Silent. Leave Impact.</p>
+      <p class="mt-12 text-2xl max-w-md mx-auto">
+        Build Different.<br>
+        Move Silent.<br>
+        Leave Impact.
+      </p>
 
-      <div class="mb-12">
-        <p class="text-red-400 text-sm mb-2">DROP AM 1. JULI 2026</p>
-        <div id="countdown" class="text-5xl font-bold flex justify-center gap-8"></div>
-      </div>
-
-      <button onclick="alert('Vorbestellung startet am 1. Juli!')" 
-              class="bg-red-600 hover:bg-white hover:text-red-600 px-16 py-8 text-3xl font-bold rounded-2xl border-4 border-white">
+      <button onclick="alert('Vorbestellung startet am 1. Juli 2026 🔥')" 
+              class="mt-12 bg-white text-black px-14 py-6 text-2xl font-semibold rounded-2xl hover:bg-red-600 hover:text-white transition-all">
         JETZT VORBESTELLEN
       </button>
     </div>
   </section>
 
-  <script>
-    // Parallax
-    document.addEventListener('mousemove', (e) => {
-      const bg = document.getElementById('background');
-      const x = (e.clientX / window.innerWidth) * 40 - 20;
-      const y = (e.clientY / window.innerHeight) * 40 - 20;
-      bg.style.transform = `translate(${x}px, ${y}px)`;
-    });
+  <!-- SECOND SECTION - wie bei day one (Produkt Teaser) -->
+  <section class="py-20 bg-zinc-950">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="text-4xl font-semibold text-center mb-12">Die Nr.1 Collection</h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="bg-zinc-900 rounded-3xl overflow-hidden">
+          <img src="front.png" class="w-full">
+          <div class="p-6">
+            <h3 class="text-xl font-semibold">Chest Print Tee</h3>
+            <p class="text-gray-400">Oversized • Premium Heavyweight</p>
+          </div>
+        </div>
+        
+        <div class="bg-zinc-900 rounded-3xl overflow-hidden">
+          <img src="back.png" class="w-full">
+          <div class="p-6">
+            <h3 class="text-xl font-semibold">Full Back Print Hoodie</h3>
+            <p class="text-gray-400">Warrior Edition • 420GSM</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    // Countdown
-    function countdown() {
-      const drop = new Date("2026-07-01T00:00:00").getTime();
-      const now = new Date().getTime();
-      const diff = drop - now;
+  <!-- THIRD SECTION - Footer / Community wie bei day one -->
+  <section class="bg-black py-20 border-t border-zinc-900">
+    <div class="max-w-6xl mx-auto px-6 text-center">
+      <h2 class="text-3xl font-semibold mb-6">Werde Teil der Bellator Family</h2>
+      <p class="max-w-md mx-auto text-gray-400 mb-8">
+        Melde dich an und sei der Erste, der den Drop bekommt.
+      </p>
+      
+      <div class="max-w-md mx-auto">
+        <input type="email" placeholder="Deine E-Mail" 
+               class="w-full bg-zinc-900 border border-zinc-700 rounded-2xl px-6 py-5 text-lg focus:outline-none">
+        <button class="mt-4 w-full bg-red-600 hover:bg-red-700 py-5 text-xl font-semibold rounded-2xl">
+          JETZT ANMELDEN
+        </button>
+      </div>
 
-      if (diff < 0) {
-        document.getElementById("countdown").innerHTML = "DROP IST DA!";
-        return;
-      }
+      <div class="mt-20 text-sm text-gray-500 flex flex-col md:flex-row justify-center gap-8">
+        <a href="#" class="hover:text-white">Instagram</a>
+        <a href="#" class="hover:text-white">TikTok</a>
+        <a href="#" class="hover:text-white">Kontakt</a>
+        <a href="#" class="hover:text-white">Impressum</a>
+      </div>
 
-      const days = Math.floor(diff / (1000*60*60*24));
-      const hours = Math.floor((diff % (1000*60*60*24)) / (1000*60*60));
-      const minutes = Math.floor((diff % (1000*60*60)) / (1000*60));
+      <p class="mt-12 text-xs text-gray-600">© 2026 Bellator Wear • Unconquered Streetwear</p>
+    </div>
+  </section>
 
-      document.getElementById("countdown").innerHTML = `
-        <div>${days}<span class="text-sm block">TAGE</span></div>
-        <div>${hours}<span class="text-sm block">STD</span></div>
-        <div>${minutes}<span class="text-sm block">MIN</span></div>
-      `;
-    }
-    setInterval(countdown, 60000);
-    countdown();
-  </script>
 </body>
 </html>
